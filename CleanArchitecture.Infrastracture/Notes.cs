@@ -9,7 +9,7 @@ namespace CleanArchitecture.Infrastracture
     internal class Notes
     {
         /* DATA LAYER
-         * Repository, Data access implementation, 3rd party APIs
+         * Repository, Data access implementation, 3rd party APIs, DBContext (EF)
          * 
          */
     }
