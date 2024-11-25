@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CleanArchitecture.Infrastracture.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,10 @@ namespace CleanArchitecture.Infrastracture
     {
         public static IServiceCollection InfrastructureDI(this IServiceCollection service)
         {
+            service.AddDbContext<AppDbContext>(options => 
+            {
+                options.UseSqlServer("server=.;Database=dev;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
+            });
             return service;
         }
     }
